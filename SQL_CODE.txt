@@ -1,3 +1,69 @@
+/* henry*/
+CREATE TABLE [dbo].[Player] (
+    [Player_ID]   INT        NOT NULL,
+    [Player_Name] VARCHAR (10) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Player_ID] ASC)
+);
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (0, 'Bob');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (1, 'jim');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (2, 'tim');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (3, 'rob');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (4, 'hannah');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (5, 'sarah');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (6, 'harry');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (7, 'gavin');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (8, 'morgan');
+INSERT INTO [dbo].[Player] ([Player_ID], [Player_Name]) VALUES (9, 'scott');
+CREATE TABLE [dbo].[Locations] (
+    [Location_ID]          INT           NOT NULL,
+    [Location_Name]        VARCHAR (20)  NOT NULL,
+    [Location_Description] VARCHAR (200) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Location_ID] ASC)
+);
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (0, 'Whiterun', 'The starting town');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (1, N'Dawnstar',  'an exile community on th enorth coast of skyrim');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (2,  'Bloodlet Throne',  'A fort south of falkreath');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (3,  'Falkreath',  'A major toen in th esouthwest of skyrim');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (4,  'Winterhold',  'Winterhold is a major town that has the winterhold college a college for mages in skyrim');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (5,  'Shrine of Azura',  'A shrine devotes to Azura');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (6,  'Solitude',  'THe capital of skyrim solitude is where the king of skyrim leads');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (7,  'Dragon Bridge ',  'a settlement southwest of solitude');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (8,  'Abandoned Shack',  'An abandoned shack south east of solitude');
+INSERT INTO [dbo].[Locations] ([Location_ID], [Location_Name], [Location_Description]) VALUES (9,  'Hamvirs Rest',  'nordic ruin northwest of whiterun');
+CREATE TABLE [dbo].[Enemies] (
+    [Enemy_ID]          INT           NOT NULL,
+    [Enemy_name]        VARCHAR (20)  NOT NULL,
+    [Enemy_description] VARCHAR (200) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Enemy_ID] ASC)
+);
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (0,  'keeper',  'a undead gaurdian ')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (1,  'Draugr',  'undead nordic wariors')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (2,  'Bandit',  'person who steals for a living')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (3,  'Hired Thug',  'a strong man paid to hurt people')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (4,  'Aprentice Fire mage',  'a weak mage who focuses on fire spells')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (5,  'Frostbite Spider',  'a large spider that shoots venom')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (6,  'Blooded Vampire',  'is a type of vampire')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (7,  'Ice Magic',  'a mage that uses ice spells')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (8,  'Dragon Cultists',  'A cultist that worships dragons')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (9,  'Vagrant',  'lowlife scum who travels sewers in cities')
+INSERT INTO [dbo].[Enemies] ([Enemy_ID], [Enemy_name], [Enemy_description]) VALUES (10,  'Ice Wraith',  'Ice elemental that uses ice attacks')
+CREATE TABLE [dbo].[Enemies_Known] (
+    [Enemy_ID]  INT NOT NULL,
+    [Player_ID] INT NOT NULL,
+    CONSTRAINT [FK_Enemies_Found] FOREIGN KEY ([Enemy_ID]) REFERENCES [dbo].[Enemies] ([Enemy_ID]),
+    CONSTRAINT [FK_which_Player] FOREIGN KEY ([Player_ID]) REFERENCES [dbo].[Player] ([Player_ID])
+);
+CREATE TABLE [dbo].[Locations_known] (
+    [Location_ID] INT NOT NULL,
+    [Player_ID]   INT NOT NULL,
+    CONSTRAINT [FK_Current_Player] FOREIGN KEY ([Player_ID]) REFERENCES [dbo].[Player] ([Player_ID]),
+    CONSTRAINT [FK_Locations_Found] FOREIGN KEY ([Location_ID]) REFERENCES [dbo].[Locations] ([Location_ID])
+);
+
+
+
+
+
 CREATE TABLE [dbo].[Armor] (
     [Id]                INT           IDENTITY (0, 1) NOT NULL,
     [Armor_Name]        VARCHAR (20)  NOT NULL,
@@ -7,7 +73,7 @@ CREATE TABLE [dbo].[Armor] (
     [Armor_Cost]        INT           NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
-
+/*david*/
 CREATE TABLE [dbo].[Armor_Found] (
     [Id]        INT NOT NULL,
     [Player_ID] INT NOT NULL,
@@ -63,3 +129,4 @@ INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weigh
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (9, N'Spellbreaker', N'Unique heavy shield Daedric artifact of Peryite', 12, 38, 227)
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (10, N'Shield of Solitude', N'Unique leveled light shield.', 12, 32, 1540)
 SET IDENTITY_INSERT [dbo].[Armor] OFF
+/*collin*
