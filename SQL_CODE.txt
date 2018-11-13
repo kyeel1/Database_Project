@@ -179,3 +179,4 @@ INSERT INTO Skills (item_Id, item_name, item_description) VALUES (7, 'Black Star
 INSERT INTO Skills (item_Id, item_name, item_description) VALUES (8, 'Oghma Infinium', 'The more powerful the enchanter, the stronger the magic he can bind to his weapons and armor.');
 INSERT INTO Skills (item_Id, item_name, item_description) VALUES (9, 'Dwemer Lexicon', 'An alchemist can create magical potions and deadly poisons.');
 INSERT INTO Skills (item_Id, item_name, item_description) VALUES (10, 'Notched Pickaxe', 'Sneaking is the art of moving unseen and unheard. Highly skilled sneaks can even hide in plain sight.');
+ 
