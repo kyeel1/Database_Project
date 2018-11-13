@@ -1,0 +1,63 @@
+CREATE TABLE [dbo].[Armor] (
+    [Id]                INT           IDENTITY (0, 1) NOT NULL,
+    [Armor_Name]        VARCHAR (20)  NOT NULL,
+    [Armor_Description] VARCHAR (200) NOT NULL,
+    [Armor_Weight]      INT           NOT NULL,
+    [Armor_Defence]     INT           NOT NULL,
+    [Armor_Cost]        INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Armor_Found] (
+    [Id]        INT NOT NULL,
+    [Player_ID] INT NOT NULL,
+    [Armor_ID]  INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    FOREIGN KEY ([Armor_ID]) REFERENCES [dbo].[Armor] ([Id])
+);
+
+CREATE TABLE [dbo].[Weapons] (
+    [Id]                 INT           IDENTITY (0, 1) NOT NULL,
+    [Weapon_Name]        VARCHAR (20)  NOT NULL,
+    [Weapon_Description] VARCHAR (200) NOT NULL,
+    [Weapon_Weight]      INT           NOT NULL,
+    [Weapon_Damage]      INT           NOT NULL,
+    [Weapon_Cost]        INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Weapons_Found] (
+    [Id]         INT NOT NULL,
+    [Player_ID]  INT NOT NULL,
+    [Weapons_ID] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    FOREIGN KEY ([Weapons_ID]) REFERENCES [dbo].[Weapons] ([Id])
+);
+
+
+
+
+
+
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (3, N'Iron Dagger', N'One-handed weapon commonly used by the general population of Skyrim.', 2, 4, 10)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (4, N'Steel Mace', N'One-handed weapon commonly found as random loot in chests.', 14, 10, 65)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (5, N'Dawnbreaker', N'A unique one-haned sword given as a reward for compleation of the quest "The Break of Dawn".', 10, 12, 740)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (6, N'Elven Sword', N'One-handed weapon with a small crossguard in the shape of wings.', 13, 11, 235)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (7, N'Pickaxe', N'One-handed weapon required for mining.', 10, 5, 5)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (8, N'Orcish Battleaxe', N'Two-handed weapon that can found in random loot.', 25, 19, 165)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (9, N'Daedric Warhammer', N'Two-handed weapon with the highest base damage in the game.', 31, 27, 4000)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (11, N'Trollsbane', N'A unique enchanted steel warhammer found in a troll''s den in Reach.', 25, 20, 121)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (13, N'Falmer Bow', N'Two-handed ranged weapon most commonly used by the Falmer.', 15, 12, 135)
+INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (14, N'Iron Arrow', N'Arrows with wooden shafts, iron arrowheads, and red fletchings.', 0, 8, 1)
+
+
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (0, N'Glass Helmet', N'Light armor created with Malachite', 2, 16, 450)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (1, N'Dwarven Helmet', N'Heavy armor  found in Dwemer structures.', 12, 18, 200)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (2, N'Studded Armor', N'Light armor that requires no perks to create.', 6, 23, 75)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (3, N'Ancient Nord Armor', N'Heavy armor that is a variant of Iron Armor', 28, 25, 125)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (4, N'Hide Boots', N'Light armor that appear in random locations at level one', 1, 5, 10)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (5, N'Daedric', N'Heavy armor that is dropped by Legendary Dragons', 10, 18, 625)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (6, N'Leather Bracers', N'Light armor that is commonly droppedd by bandits.', 2, 7, 25)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (8, N'Ebony Gauntlets', N'Heavy armor found after level 30.', 7, 16, 275)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (9, N'Spellbreaker', N'Unique heavy shield Daedric artifact of Peryite', 12, 38, 227)
+INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (10, N'Shield of Solitude', N'Unique leveled light shield.', 12, 32, 1540)
