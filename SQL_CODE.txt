@@ -38,7 +38,7 @@ CREATE TABLE [dbo].[Weapons_Found] (
 
 
 
-
+SET IDENTITY_INSERT [dbo].[Weapons] ON
 INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (3, N'Iron Dagger', N'One-handed weapon commonly used by the general population of Skyrim.', 2, 4, 10)
 INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (4, N'Steel Mace', N'One-handed weapon commonly found as random loot in chests.', 14, 10, 65)
 INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (5, N'Dawnbreaker', N'A unique one-haned sword given as a reward for compleation of the quest "The Break of Dawn".', 10, 12, 740)
@@ -49,8 +49,9 @@ INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_
 INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (11, N'Trollsbane', N'A unique enchanted steel warhammer found in a troll''s den in Reach.', 25, 20, 121)
 INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (13, N'Falmer Bow', N'Two-handed ranged weapon most commonly used by the Falmer.', 15, 12, 135)
 INSERT INTO [dbo].[Weapons] ([Id], [Weapon_Name], [Weapon_Description], [Weapon_Weight], [Weapon_Damage], [Weapon_Cost]) VALUES (14, N'Iron Arrow', N'Arrows with wooden shafts, iron arrowheads, and red fletchings.', 0, 8, 1)
+SET IDENTITY_INSERT [dbo].[Weapons] OFF
 
-
+SET IDENTITY_INSERT [dbo].[Armor] ON
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (0, N'Glass Helmet', N'Light armor created with Malachite', 2, 16, 450)
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (1, N'Dwarven Helmet', N'Heavy armor  found in Dwemer structures.', 12, 18, 200)
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (2, N'Studded Armor', N'Light armor that requires no perks to create.', 6, 23, 75)
@@ -61,3 +62,4 @@ INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weigh
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (8, N'Ebony Gauntlets', N'Heavy armor found after level 30.', 7, 16, 275)
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (9, N'Spellbreaker', N'Unique heavy shield Daedric artifact of Peryite', 12, 38, 227)
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (10, N'Shield of Solitude', N'Unique leveled light shield.', 12, 32, 1540)
+SET IDENTITY_INSERT [dbo].[Armor] OFF
