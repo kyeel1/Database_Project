@@ -129,4 +129,53 @@ INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weigh
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (9, N'Spellbreaker', N'Unique heavy shield Daedric artifact of Peryite', 12, 38, 227)
 INSERT INTO [dbo].[Armor] ([Id], [Armor_Name], [Armor_Description], [Armor_Weight], [Armor_Defence], [Armor_Cost]) VALUES (10, N'Shield of Solitude', N'Unique leveled light shield.', 12, 32, 1540)
 SET IDENTITY_INSERT [dbo].[Armor] OFF
-/*collin*
+/*collin*/
+DROP TABLE Skills CASCADE CONSTRAINTS;
+DROP TABLE Skills_Found CASCADE CONSTRAINTS;
+DROP TABLE Items CASCADE CONSTRAINTS;
+DROP TABLE Items_Found CASCADE CONSTRAINTS;
+CREATE TABLE Skills(
+    skill_Id          INT           IDENTITY (0, 1) NOT NULL,
+    skill_name        VARCHAR (20)  NULL,
+    skill_description VARCHAR (200) NULL,
+    skill_type        VARCHAR (20)  NULL,
+    PRIMARY KEY CLUSTERED (skill_Id ASC)
+);
+CREATE TABLE Skills_Found(
+    player_Id	INT,
+    skill_Id    INT,
+    CONSTRAINT player_fk FOREIGN KEY(player_Id) REFERENCES Players(player_Id) ON DELETE CASCADE,
+    CONSTRAINT skill_fk FOREIGN KEY(skill_Id) REFERENCES Skills(skill_Id) ON DELETE CASCADE);
+);
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (1, 'Archery', 'An archer is trained in the use of bows and arrows. The greater the skill, the more deadly the shot.', 'Combat');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (2, 'Block', 'The art of blocking an enemy''s blows with a shield or weapon. Blocking reduces the damage and staggering from physical attacks.', 'Combat');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (3, 'Heavy Armour', 'Those trained to use Heavy Armor make more efficient use of Iron, Steel, Dwarven, Orcish, Ebony, and Daedric armors.', 'Combat');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (4, 'Smithing', 'The art of creating weapons and armor from raw materials, or improving non-magical weapons and armor.', 'Combat');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (5, 'Alteration', 'The School of Alteration involves the manipulation of the physical world and its natural properties. This skill makes it easier to cast spells like Waterbreathing, magical protection, and Paralysis.', 'Magic');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (6, 'Conjuration', 'The School of Conjuration governs raising the dead or summoning creations from Oblivion. This skill makes it easier to cast these spells as well as Soul Trap and bindings.', 'Magic');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (7, 'Destruction', 'The School of Destruction involves the sic harnessing the energies of fire, frost and shock. This skill makes it easier to cast spells like Fireball, Ice Spike, and Lightning Bolt.', 'Magic');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (8, 'Enchanting', 'The more powerful the enchanter, the stronger the magic he can bind to his weapons and armor.', 'Magic');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (9, 'Alchemy', 'An alchemist can create magical potions and deadly poisons.', 'Stealth');
+INSERT INTO Skills (skill_Id, skill_name, skill_description, skill_type) VALUES (10, 'Sneak', 'Sneaking is the art of moving unseen and unheard. Highly skilled sneaks can even hide in plain sight.', 'Stealth');
+CREATE TABLE Items(
+    item_Id          INT           IDENTITY (0, 1) NOT NULL,
+    item_name        VARCHAR (20)  NULL,
+    item_description VARCHAR (200) NULL,
+    PRIMARY KEY CLUSTERED (skill_Id ASC)
+);
+CREATE TABLE Skills_Found(
+    player_Id	INT,
+    item_Id    INT,
+    CONSTRAINT player_fk FOREIGN KEY(player_Id) REFERENCES Players(player_Id) ON DELETE CASCADE,
+    CONSTRAINT item_fk FOREIGN KEY(item_Id) REFERENCES Items(item_Id) ON DELETE CASCADE);
+);
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (1, 'NightWeavers Band', 'An archer is trained in the use of bows and arrows. The greater the skill, the more deadly the shot.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (2, 'Shield of Solitude', 'The art of blocking an enemy''s blows with a shield or weapon. Blocking reduces the damage and staggering from physical attacks.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (3, 'Ancient Helmet of the Unburned', 'Those trained to use Heavy Armor make more efficient use of Iron, Steel, Dwarven, Orcish, Ebony, and Daedric armors.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (4, 'Ironhand Gauntlets', 'The art of creating weapons and armor from raw materials, or improving non-magical weapons and armor.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (5, 'Ebony Mail', 'The School of Alteration involves the manipulation of the physical world and its natural properties. This skill makes it easier to cast spells like Waterbreathing, magical protection, and Paralysis.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (6, 'The Gauldur Amulet', 'The School of Conjuration governs raising the dead or summoning creations from Oblivion. This skill makes it easier to cast these spells as well as Soul Trap and bindings.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (7, 'Black Star', 'The School of Destruction involves the sic harnessing the energies of fire, frost and shock. This skill makes it easier to cast spells like Fireball, Ice Spike, and Lightning Bolt.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (8, 'Oghma Infinium', 'The more powerful the enchanter, the stronger the magic he can bind to his weapons and armor.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (9, 'Dwemer Lexicon', 'An alchemist can create magical potions and deadly poisons.');
+INSERT INTO Skills (item_Id, item_name, item_description) VALUES (10, 'Notched Pickaxe', 'Sneaking is the art of moving unseen and unheard. Highly skilled sneaks can even hide in plain sight.');
