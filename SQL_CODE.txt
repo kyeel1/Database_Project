@@ -63,7 +63,7 @@ CREATE TABLE [dbo].[Locations_known] (
 
 
 
-
+--David
 CREATE TABLE [dbo].[Armor] (
     [Id]                INT           IDENTITY (0, 1) NOT NULL,
     [Armor_Name]        VARCHAR (20)  NOT NULL,
@@ -79,7 +79,8 @@ CREATE TABLE [dbo].[Armor_Found] (
     [Player_ID] INT NOT NULL,
     [Armor_ID]  INT NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    FOREIGN KEY ([Armor_ID]) REFERENCES [dbo].[Armor] ([Id])
+    FOREIGN KEY ([Armor_ID]) REFERENCES [dbo].[Armor] ([Id]),
+    FOREIGN KEY ([Player_ID]) REFERENCES [dbo].[Player] ([Player_ID])
 );
 
 CREATE TABLE [dbo].[Weapons] (
@@ -97,7 +98,8 @@ CREATE TABLE [dbo].[Weapons_Found] (
     [Player_ID]  INT NOT NULL,
     [Weapons_ID] INT NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    FOREIGN KEY ([Weapons_ID]) REFERENCES [dbo].[Weapons] ([Id])
+    FOREIGN KEY ([Weapons_ID]) REFERENCES [dbo].[Weapons] ([Id]),
+    FOREIGN KEY ([Player_ID]) REFERENCES [dbo].[Player] ([Player_ID])
 );
 
 
