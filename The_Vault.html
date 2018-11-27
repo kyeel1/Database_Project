@@ -22,14 +22,53 @@
 		<h1>What do you need to know?</h1>
 		
 			<div class="button">
-				<a href="" class="btn btn-one"> enemies</a>
-				<a href="" class="btn btn-two"> locations</a>
-				<a href="" class="btn btn-two"> armour</a>
-				<a href="" class="btn btn-two"> weapons</a>
-				<a href="" class="btn btn-two"> skills</a>
-				<a href="" class="btn btn-two"> npcs</a>
+				<a href=""<!-- onclick = "EnemyCall()" -->class="btn btn-one"> Enemies</a>
+				<a href=""<!-- onclick = "LocationCall()" -->class="btn btn-two"> Locations</a>
+				<a href=""<!-- onclick = "ArmourCall()" -->class="btn btn-two"> Armour</a>
+				<a href=""<!-- onclick = "WeaponCall()" -->class="btn btn-two"> Weapons</a>
+				<a href=""<!-- onclick = "SkillCall()" -->class="btn btn-two"> Skills</a>
+				<a href=""<!-- onclick = "NPCCall()" --> class="btn btn-two"> NPCs</a>
 			</div>
-		
+			<!--
+			<script>
+				function EnemyCall() { add in the database connection string
+    					<php>
+						$conn = (this is thee connection string);
+						$query = "select * from EnemiesKnown where Playerid = currentuser(need to add a global variable when they log in);
+					</php>
+				}
+				function LocationCall() { add in the database connection string
+    					<php>
+						$conn = (this is thee connection string);
+						$query = "select * from LocationsKnown where Playerid = currentuser(need to add a global variable when they log in);
+					</php>
+				}
+				function ArmourCall() { add in the database connection string
+    					<php>
+						$conn = (this is thee connection string);
+						$query = "select * from ArmourKnown where Playerid = currentuser(need to add a global variable when they log in);
+					</php>
+				}
+				function WeaponCall() { add in the database connection string
+    					<php>
+						$conn = (this is thee connection string);
+						$query = "select * from WeaponsKnown where Playerid = currentuser(need to add a global variable when they log in);
+					</php>
+				}
+				function SkillCall() { add in the database connection string
+    					<php>
+						$conn = (this is thee connection string);
+						$query = "select * from SkillsKnown where Playerid = currentuser(need to add a global variable when they log in);
+					</php>
+				}
+				function NPCCall() { add in the database connection string
+    					<php>
+						$conn = (this is thee connection string);
+						$query = "select * from NpcsKnown where Playerid = currentuser(need to add a global variable when they log in);
+					</php>
+				}
+			</script>
+			-->
 	</header>
 </body>
 </html>
