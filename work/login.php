@@ -4,6 +4,17 @@
 	<link href="css/login-style.css" rel="stylesheet">
 </head>
 <body>
+	<header>
+		<ul>
+		    <li><img src="logo.png"></li>
+			<li><a href="index.html"> HOME </a></li>
+			<li><a href="instructions.html"> INSTRUCTIONS </a></li>
+			<li><a href="The_Vault.html"> THE VAULT </a></li>
+			<li><a href="contact.html"> CONTACT </a></li>
+			<li><a href="login.html"> LOGIN </a></li>
+			<li><a href="register.html"> REGISTER </a></li>
+			
+		</ul>
 	</header>
 	<form action="needScript.php">
 		<div class="imgcontainer">
