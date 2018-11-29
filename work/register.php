@@ -17,7 +17,6 @@
 		</ul>
 		
 	</header>
-	<form action="needscript.php">
 		<div class="container">
 			<h1>Register</h1>
 			<p>Please fill in this form to create an account.</p>
@@ -34,6 +33,7 @@
 
 			<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 			<button type="submit" onclick = "userCall()" class="registerbtn">Register</button>
+			
 		</div>
 		<script>
 		function userCall() {
@@ -51,26 +51,27 @@
 						$flag = 1;
 					};
 					$row = $temp;
-				};
+				}
 				$temp = $temp+1;
 				if($flag ==1){
 					oci_free_statement($stid);
 					oci_close($conn);
 					echo "username already in use try a different one or try logging in";
-				};
+				}
 				else{
 					$add ="INSERT INTO Player (Player_ID, Player_Name) VALUES(" + $temp + ", " + $tempUser + ");";
 					$stidA = oci_parse($conn,$add);
-					oci_execute($stidA,OCI_DEFAULT);
+					oci_execute($stidA,OCI_COMMIT_ON_SUCCESS);
 					oci_free_statement($stid);
 					oci_close($conn);
-				};
+				}
 			?>
+			}
 		</script>
 		<div class="container signin">
 			<p>Already have an account? <a href="login.html">Sign in</a>.</p>
 		</div>
-	</form>
+		
 
 </body>
 </html>
