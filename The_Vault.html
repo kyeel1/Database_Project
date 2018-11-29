@@ -29,47 +29,121 @@
 				<a href="" onclick = "SkillCall()" class="btn btn-two"> Skills</a>
 				<a href="" onclick = "NPCCall()" class="btn btn-two"> NPCs</a>
 			</div>
-			<!-- onclick = "LocationCall()" -->
-			<!-- onclick = "ArmourCall()" -->
-			<!-- onclick = "WeaponCall()" -->
-			<!-- onclick = "SkillCall()" -->
-			<!-- onclick = "NPCCall()" -->
-			
 			<script>
 				function EnemyCall() {  
     					<?php
-						$conn = ;
+						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
 						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$stid = oci_parse($conn,$query);
+						oci_execute($stid,OCI_DEFAULT);
+						//iterate through each row
+						while ($row = oci_fetch_array($stid,OCI_ASSOC)) 
+						{
+    						//iterate through each item in the row and echo it  
+   							foreach ($row as $item)    
+    							{
+        							echo $item.' ';
+    							}   
+							echo '<br/>';}
+						oci_free_statement($stid);
+						oci_close($conn);
+
+
 					?>
 				}
 				function LocationCall() {  
     					<?php
-						$conn = ;
-						$query = "select * from LocationsKnown where Player_id = " + $currentuser;
+						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$stid = oci_parse($conn,$query);
+						oci_execute($stid,OCI_DEFAULT);
+						//iterate through each row
+						while ($row = oci_fetch_array($stid,OCI_ASSOC)) 
+						{
+    						//iterate through each item in the row and echo it  
+   							foreach ($row as $item)    
+    							{
+        							echo $item.' ';
+    							}   
+							echo '<br/>';}
+						oci_free_statement($stid);
+						oci_close($conn);
 					?>
 				}
 				function ArmourCall() {  
     					<?php
-						$conn = ;
-						$query = "select * from ArmourKnown where Player_id = " + $currentuser;
+						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$stid = oci_parse($conn,$query);
+						oci_execute($stid,OCI_DEFAULT);
+						//iterate through each row
+						while ($row = oci_fetch_array($stid,OCI_ASSOC)) 
+						{
+    						//iterate through each item in the row and echo it  
+   							foreach ($row as $item)    
+    							{
+        							echo $item.' ';
+    							}   
+							echo '<br/>';}
+						oci_free_statement($stid);
+						oci_close($conn);
 					?>
 				}
 				function WeaponCall() {  
     					<?php
-						$conn = ;
-						$query = "select * from WeaponsKnown where Player_id = " + $currentuser;
+						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$stid = oci_parse($conn,$query);
+						oci_execute($stid,OCI_DEFAULT);
+						//iterate through each row
+						while ($row = oci_fetch_array($stid,OCI_ASSOC)) 
+						{
+    						//iterate through each item in the row and echo it  
+   							foreach ($row as $item)    
+    							{
+        							echo $item.' ';
+    							}   
+							echo '<br/>';}
+						oci_free_statement($stid);
+						oci_close($conn);
 					?>
 				}
 				function SkillCall() {  
     					<?php
-						$conn = (this is the connection string);
-						$query = "select * from SkillsKnown where Player_id = " + $currentuser;
+						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$stid = oci_parse($conn,$query);
+						oci_execute($stid,OCI_DEFAULT);
+						//iterate through each row
+						while ($row = oci_fetch_array($stid,OCI_ASSOC)) 
+						{
+    						//iterate through each item in the row and echo it  
+   							foreach ($row as $item)    
+    							{
+        							echo $item.' ';
+    							}   
+							echo '<br/>';}
+						oci_free_statement($stid);
+						oci_close($conn);
 					?>
 				}
 				function NPCCall() {  
     					<?php
-						$conn = ;
-						$query = "select * from NpcsKnown where Player_id = " +  $currentuser;
+						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
+						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$stid = oci_parse($conn,$query);
+						oci_execute($stid,OCI_DEFAULT);
+						//iterate through each row
+						while ($row = oci_fetch_array($stid,OCI_ASSOC)) 
+						{
+    						//iterate through each item in the row and echo it  
+   							foreach ($row as $item)    
+    							{
+        							echo $item.' ';
+    							}   
+							echo '<br/>';}
+						oci_free_statement($stid);
+						oci_close($conn);
 					?>
 				}
 			</script>
