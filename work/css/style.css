@@ -1,0 +1,99 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+header
+{
+	background-image: url(../images/background.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    
+	color: white;
+    align-items: center;
+	text-align: center;
+	
+    padding: 25px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+li img
+{
+	width: 50px;
+	height: 65px;
+	float: left;
+	text-align:center;
+	align-items: center;
+}
+body
+{
+	font-family: monospace;
+}
+.row
+{
+	max-width: 1200px;
+	margin: auto;
+}
+.hero
+{
+	position: absolute;
+	width: 1200px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+h1
+{
+	color: white;
+	text-transform: uppercase;
+	font-size: 70px;
+	text-align: center;
+	margin-top: 275px;
+}
+.button
+{
+	marigin-top: 30px;
+	marigin-left: 440px;
+}
+.btn
+{
+	border: 1px solid white;
+	padding: 10px 30px;
+	color: white;
+	text-decoration: none;
+	margin-right: 5px;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+.btn-one
+{
+	background-color: darkorange;
+	font-family: "Roboto", sans-serif;
+}
+.btn-two
+{
+	font-family: "Roboto", sans-serif;
+}
+.btn-two:hover{
+	background-color: darkorange;
+	transition: all 0.5s ease-in;
+}
