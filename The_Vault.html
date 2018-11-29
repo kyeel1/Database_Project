@@ -22,14 +22,13 @@
 		<h1>What do you need to know?</h1>
 		
 			<div class="button">
-				<a href=""  class="btn btn-one"> Enemies</a>
-				<a href=""  class="btn btn-two"> Locations</a>
-				<a href=""  class="btn btn-two"> Armour</a>
-				<a href=""  class="btn btn-two"> Weapons</a>
-				<a href=""  class="btn btn-two"> Skills</a>
-				<a href=""  class="btn btn-two"> NPCs</a>
+				<a href="" onclick = "EnemyCall()" class="btn btn-one"> Enemies</a>
+				<a href="" onclick = "LocationCall()" class="btn btn-two"> Locations</a>
+				<a href="" onclick = "ArmourCall()" class="btn btn-two"> Armour</a>
+				<a href="" onclick = "WeaponCall()" class="btn btn-two"> Weapons</a>
+				<a href="" onclick = "SkillCall()" class="btn btn-two"> Skills</a>
+				<a href="" onclick = "NPCCall()" class="btn btn-two"> NPCs</a>
 			</div>
-			<!-- onclick = "EnemyCall()" -->
 			<!-- onclick = "LocationCall()" -->
 			<!-- onclick = "ArmourCall()" -->
 			<!-- onclick = "WeaponCall()" -->
@@ -39,38 +38,38 @@
 			<script>
 				function EnemyCall() {  
     					<?php
-						$conn = (this is thee connection string);
-						$query = "select * from EnemiesKnown where Playerid = " + $currentuser;
+						$conn = ;
+						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
 					?>
 				}
 				function LocationCall() {  
     					<?php
-						$conn = (this is thee connection string);
-						$query = "select * from LocationsKnown where Playerid = " + $currentuser;
+						$conn = ;
+						$query = "select * from LocationsKnown where Player_id = " + $currentuser;
 					?>
 				}
 				function ArmourCall() {  
     					<?php
-						$conn = (this is thee connection string);
-						$query = "select * from ArmourKnown where Playerid = " + $currentuser;
+						$conn = ;
+						$query = "select * from ArmourKnown where Player_id = " + $currentuser;
 					?>
 				}
 				function WeaponCall() {  
     					<?php
-						$conn = (this is thee connection string);
-						$query = "select * from WeaponsKnown where Playerid = " + $currentuser;
+						$conn = ;
+						$query = "select * from WeaponsKnown where Player_id = " + $currentuser;
 					?>
 				}
 				function SkillCall() {  
     					<?php
 						$conn = (this is the connection string);
-						$query = "select * from SkillsKnown where Playerid = " + $currentuser;
+						$query = "select * from SkillsKnown where Player_id = " + $currentuser;
 					?>
 				}
 				function NPCCall() {  
     					<?php
-						$conn = (this is thee connection string);
-						$query = "select * from NpcsKnown where Playerid = " +  $currentuser;
+						$conn = ;
+						$query = "select * from NpcsKnown where Player_id = " +  $currentuser;
 					?>
 				}
 			</script>
