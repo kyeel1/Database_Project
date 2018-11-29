@@ -33,7 +33,7 @@
 				function EnemyCall() {  
     					<?php
 						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
-						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$query = "select * from EnemiesKnown where Player_id = " + $_SESSION["currentUser"];
 						$stid = oci_parse($conn,$query);
 						oci_execute($stid,OCI_DEFAULT);
 						//iterate through each row
@@ -54,7 +54,7 @@
 				function LocationCall() {  
     					<?php
 						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
-						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$query = "select * from EnemiesKnown where Player_id = " + $_SESSION["currentUser"];
 						$stid = oci_parse($conn,$query);
 						oci_execute($stid,OCI_DEFAULT);
 						//iterate through each row
@@ -73,7 +73,7 @@
 				function ArmourCall() {  
     					<?php
 						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
-						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$query = "select * from EnemiesKnown where Player_id = " + $_SESSION["currentUser"];
 						$stid = oci_parse($conn,$query);
 						oci_execute($stid,OCI_DEFAULT);
 						//iterate through each row
@@ -92,7 +92,7 @@
 				function WeaponCall() {  
     					<?php
 						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
-						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$query = "select * from EnemiesKnown where Player_id = " + $_SESSION["currentUser"];
 						$stid = oci_parse($conn,$query);
 						oci_execute($stid,OCI_DEFAULT);
 						//iterate through each row
@@ -111,7 +111,7 @@
 				function SkillCall() {  
     					<?php
 						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
-						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$query = "select * from EnemiesKnown where Player_id = " + $_SESSION["currentUser"];
 						$stid = oci_parse($conn,$query);
 						oci_execute($stid,OCI_DEFAULT);
 						//iterate through each row
@@ -130,7 +130,7 @@
 				function NPCCall() {  
     					<?php
 						$conn = oci_connect('cyagow', 'Mar951996', '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(Host=db2.ndsu.edu)(Port=1521)))(CONNECT_DATA=(SID=cs)))');
-						$query = "select * from EnemiesKnown where Player_id = " + $currentuser;
+						$query = "select * from EnemiesKnown where Player_id = " + $_SESSION["currentUser"];
 						$stid = oci_parse($conn,$query);
 						oci_execute($stid,OCI_DEFAULT);
 						//iterate through each row
